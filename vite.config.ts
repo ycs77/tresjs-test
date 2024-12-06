@@ -7,7 +7,6 @@ import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import RadixVueResolver from 'radix-vue/resolver'
 import { templateCompilerOptions } from '@tresjs/core'
 
 export default defineConfig({
@@ -31,7 +30,6 @@ export default defineConfig({
     Components({
       resolvers: [
         IconsResolver({ prefix: '' }),
-        RadixVueResolver(),
       ],
       dts: 'src/shims/components.d.ts',
     }),
