@@ -8,10 +8,13 @@ import Pages from 'vite-plugin-pages'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import RadixVueResolver from 'radix-vue/resolver'
+import { templateCompilerOptions } from '@tresjs/core'
 
 export default defineConfig({
   plugins: [
-    Vue(),
+    Vue({
+      ...templateCompilerOptions,
+    }),
     VueDevTools(),
     AutoImport({
       imports: [
