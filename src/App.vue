@@ -29,9 +29,9 @@
     <TresMesh
       :position="[box.position.x, box.position.y, box.position.z]"
       :rotation="[
-        box.rotation.x / 180 * Math.PI,
-        box.rotation.y / 180 * Math.PI,
-        box.rotation.z / 180 * Math.PI,
+        box.rotation.x * Math.PI / 180,
+        box.rotation.y * Math.PI / 180,
+        box.rotation.z * Math.PI / 180,
       ]"
       cast-shadow
     >
