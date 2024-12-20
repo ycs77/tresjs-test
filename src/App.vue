@@ -26,18 +26,26 @@
       <TresMeshToonMaterial color="#2244ff" />
     </TresMesh>
     <!-- 橘方塊 -->
-    <TresMesh
-      :position="[box.position.x, box.position.y, box.position.z]"
+    <TresGroup
+      :position="[
+        box.position.x,
+        box.position.y + box.height / 2,
+        box.position.z + -box.depth / 2,
+      ]"
       :rotation="[
         box.rotation.x * Math.PI / 180,
         box.rotation.y * Math.PI / 180,
         box.rotation.z * Math.PI / 180,
       ]"
-      cast-shadow
     >
-      <TresBoxGeometry :args="[box.width, box.height, box.depth]" />
-      <TresMeshToonMaterial color="#ff4400" />
-    </TresMesh>
+      <TresMesh
+        :position="[0, -box.height / 2, box.depth / 2]"
+        cast-shadow
+      >
+        <TresBoxGeometry :args="[box.width, box.height, box.depth]" />
+        <TresMeshToonMaterial color="#ff4400" />
+      </TresMesh>
+    </TresGroup>
     <!-- 紅方塊 -->
     <TresMesh
       :position="[2, 0.75, 0]"
